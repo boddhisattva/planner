@@ -7,7 +7,11 @@ if Rails.env.development?
 
     workshop = 10.times.map { |n| Fabricate(:workshop, chapter: chapters.sample, date_and_time: Time.zone.now+14.days-n.weeks) }
 
+<<<<<<< 2cad581d72d981a2cf82f5f6c755333fefea745b
     courses = 5.times.map { |n| Fabricate(:course, chapter: chapters.sample, date_and_time: Time.zone.now+14.days-n.weeks) }
+=======
+    # courses = 5.times.map { |n| Fabricate(:course, chapter: chapters.sample, date_and_time: DateTime.now+14.days-n.weeks) }
+>>>>>>> Remove Meeting from seeds. Never used and has an error because minified_event expects the class to implement #invitations
     coaches = 20.times.map { |n| Fabricate(:coach, groups: Group.coaches.order("RANDOM()").limit(2)) }
     tutorials = 10.times.map { |n| Fabricate(:tutorial, workshop: workshop.sample) }
     feedback_requests = 5.times.map { Fabricate(:feedback_request) }
